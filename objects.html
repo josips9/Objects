@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="base.css">
+</head>
+
+<body>
+  <input type="text" name="first" value="josip">
+
+  <script src="https://unpkg.com/lodash"></script>
+  <script>
+    const age = 100;
+    const josip = {
+      age,
+      name: 'josip',
+      propertyToCheck: 'NEVER',
+      'cool-dude': true,
+      'really cool': false,
+      '888': true,
+      dog: 'snicker',
+      clothing: {
+        shirts: 10,
+        pants: 2
+      },
+      sayHello: function (greeting = 'Hey') {
+        return `${greeting} ${this.name}`;
+      }
+    };
+
+    josip.job = 'Web Developer';
+    josip.age = 25;
+
+    const josFroze = Object.freeze(josip);
+
+    console.log(josip.age);
+    
+    // const propertyToCheck = prompt('What do you want to check');
+    // console.log(propertyToCheck);
+    // console.log(josip[propertyToCheck]);
+
+    const nameInput = document.querySelector('[name="first"]');
+    const name = nameInput ? nameInput.value : '';
+    console.log(name);
+
+  </script>
+</body>
+
+</html>
