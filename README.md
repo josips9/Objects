@@ -12,5 +12,5 @@ Amazing tutorial. I definately recomended to check it out. Visit course website 
 
 When objects, and arrays are copied by reference
 
-\u1F4A1 When we created const person3, we created variable that JUST points to original varialbe, instead of making it a copy of it. 
+\u2139 When we created const person3, we created variable that JUST points to original varialbe, instead of making it a copy of it. 
 
