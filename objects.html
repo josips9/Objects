@@ -13,6 +13,8 @@
 
   <script src="https://unpkg.com/lodash"></script>
   <script>
+
+    // Objects 
     const age = 100;
     const josip = {
       age,
@@ -45,6 +47,83 @@
     const nameInput = document.querySelector('[name="first"]');
     const name = nameInput ? nameInput.value : '';
     console.log(name);
+
+    // console.log(delete josip.job);
+    // josip.age = undefined;
+    // josip.age = null;
+
+    // Object reference vs Values
+    let name1 = 'josip';
+    let name2 = 'josip';
+
+    console.log(name1 === name2);
+    name1 = 'david';
+    console.log(name1 === name2);
+    // update name1 to be what is name2
+    name1 = name2;
+    console.log(name1 === name2);
+    name2 = name1;
+    name2 = 'josipović';
+
+    const person1 = {
+      first: 'josip',
+      last: 'subašić',
+      clothing: {
+        shirts: 10,
+        pants: 2,
+      }
+    };
+
+    const person2 = {
+      first: 'josip',
+      last: 'subašić'
+    };
+
+    // person3 is not a new object
+    // it just points to original object
+    // const person3 = person1;
+    // person3.first = 'Larry';
+    // console.log(person3.first);
+    // const person3 = { ...person1};
+    const person3 = _.cloneDeep(person1);
+    person3.first = 'Larry';
+    
+    // warning! this also changes person1!
+    // shallow copies - 
+    person3.clothing.shirts = 100;
+
+    const meatInventory = {
+      bacon: 2,
+      sausage: 5,
+      oyster: 4,
+    };
+    const veggieInventory = {
+      lettuce: 5,
+      tomatoes: 3,
+      oyster: 8,
+    };
+
+    const inventory = { 
+      ...meatInventory, 
+      ...veggieInventory,
+      oysters: 10, 
+      };
+
+    function doStuff(data) {
+      date = 'something else';
+      console.log(data);
+    }
+
+    function doStuff2(data) {
+      data.tomatoes = 1000000;
+      console.log(data);
+    }
+
+    doStuff2(inventory);
+    
+    
+
+
 
   </script>
 </body>
